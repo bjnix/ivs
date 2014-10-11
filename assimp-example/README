@@ -1,0 +1,14 @@
+=== HOW DO I COMPILE THIS? ===
+
+This program depends on:
+ * assimp (see ../assimp-lib/README-VRLAB)
+ * ImageMagick C++ development libraries
+      (On Ubuntu: sudo apt-get install libmagick++-dev)
+
+=== WHERE DID THIS CODE COME FROM? ===
+
+http://ogldev.atspace.co.uk/www/tutorial22/tutorial22.html
+
+
+=== HOW DO I RUN THIS? ===
+ * This does NOT work with chromium and is still a work in progress.

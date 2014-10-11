@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+	<object id="obj1">
+		<position_hook>
+			<x>-1:1</x>
+			<y>-1:1</y>
+			<z>-1:1</z>
+		</position_hook>
+	</object>
+</root>

@@ -1,0 +1,5 @@
+0.5		Initial version
+0.5.1		Changed from infix to prefix notation at Michael's request
+		Added semantic error prevention
+		Fixed bug where editor inserted some trailing whitespace after some lines
+0.5.2		Added "assign" operator at Michael's request

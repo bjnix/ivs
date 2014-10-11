@@ -1,0 +1,84 @@
+
+a:link    {color:#ffffff; background-color:#ff0077; text-decoration: none;}  /* unvisited link */
+a:visited {color:#ffffff; background-color:#ff0077; text-decoration: none;}  /* visited link */
+a:hover   {color:#ff0077; background-color:#ffffff; text-decoration: none;}  /* mouse over link */
+a:active  {color:#ff0077; background-color:#ffffff; text-decoration: none;}  /* selected link */ 
+
+body {
+  font-family: 'Cabin Condensed', sans-serif;
+}
+
+h1 {
+  font-family: 'Marcellus SC', serif;
+}
+
+.nicedropdown {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+  background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+  background-color:#499bdf;
+  color:#ffffff;
+  font-family:arial;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.nicebutton {
+  -moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+  box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+  background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+  background-color:#79bbff;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:2px;
+  border:1px solid #84bbf3;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:12px;
+  font-weight:bold;
+  padding:2px 8px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #528ecc;
+}.nicebutton:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+  background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+  background-color:#378de5;
+}.nicebutton:active {
+  position:relative;
+  top:1px;
+}
+
+#displayarea {
+  width: 800px;
+}
+
+.item {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.activity {
+  background-color: #ff0000;
+  border-left: 40px solid red;
+}
+
+.cset {
+  background-color: #ffff00;
+  border-left: 40px solid yellow;
+}
+
+.condition {
+  background-color: green;
+  border-left: 40px solid green;
+}
+
+.action {
+  background-color: #0000ff;
+  color: #ffffff;
+  border-left: 40px solid blue;
+}

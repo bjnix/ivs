@@ -1,0 +1,33 @@
+=== HOW DO I COMPILE THIS? ===
+
+Assimp requires:
+ * The Boost library (and development headers)
+ * Cmake compilation ssytem.
+On Ubuntu, you can install these packages with:
+  sudo apt-get install libboost-dev cmake cmake-curses-gui
+
+To compile Assimp on your Linux machine, use the following commands:
+ 1) rm -f CMakeCache.txt
+
+ 2) cmake -DASSIMP_BUILD_SAMPLES=ON -DASSIMP_BUILD_STATIC_LIB=ON .
+    or on IVS (which has a Boost installation that is difficult to work with):
+    /export/apps/src/cmake/2.8.9/cmake-2.8.9/bin/cmake -DASSIMP_BUILD_SAMPLES=ON -DASSIMP_BUILD_STATIC_LIB=ON -DASSIMP_ENABLE_BOOST_WORKAROUND=ON -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ .
+
+
+ 3) make
+     (When you compile on IVS, you will see lots of warnings!)
+
+=== HOW DO I KNOW COMPILATION WORKED? ===
+
+The assimp library comes with a simple OpenGL program that loads model files (without loading textures!) that you can test with. After you have compiled assimp, try running:
+
+bin/assimp_simpleogl test/models/Collada/duck.dae
+
+
+=== WHAT VERSION OF ASSIMP IS THIS? ===
+
+This version of assimp is from git on Aug 1 2013 (last commit e06cdaac46):
+https://github.com/assimp/assimp
+
+Do not update this library to a newer version unless you have a good reason to. Assimp 3.0 does not compile on IVS, this newer version from git does.
+

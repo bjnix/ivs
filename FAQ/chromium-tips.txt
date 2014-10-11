@@ -1,0 +1,50 @@
+### How do I run a chromium program?
+
+ssh -Y ivs.research.mtu.edu
+Get a copy of this repository installed on ivs.research.mtu.edu
+Go into the slideshow directory.
+Run "make"
+Run: "./chromium ./slideshow image1.jpg image2.jpg" where the two image files are images that you want to display on the wall.
+
+
+### What files do I need to make chromium work?
+
+You need the "chromium" script, "crconfig.conf". You also need "mothership.py" (mothership.pyc is the compiled code which will automatically get regenerated if you delete it) if you want chromium run faster by using the InfiniBand network.
+
+
+### What 3D graphics libraries work with chromium?
+
+Chromium does not support the entire OpenGL API. For example, fragment and vertex programs do not work. If you find any libraries that work well with Chromium, please update this answer!
+
+
+### Where should I store my files on ivs.research.mtu.edu?
+
+Everybody has approximately a 2GB quota on their home directory. You can store larger files in /research/USER where USER is your username.
+
+
+### How can I test my chromium program on a different computer?
+
+You can always run programs without using the chromium script on any computer. Your programs should run normally on your local computer. For example, you can try this with the slideshow program. There are a few caveats with this solution that you should be aware of:
+
+* Chromium will effectively run your program "full-screen". You should make sure the aspect ratio of your programs window on your computer matches the aspect ratio of the IVS display screen.
+
+* Your program will probably run more quickly on your local machine than on the display wall.
+
+* Some portions of the OpenGL API is not supported by chromium. You should regularly test your program on chromium to ensure that you did not use functions in your code that chromium does not support.
+
+
+### A tile computer is not functioning, how can I run chromium anyway?
+
+You can run chromium on part of the wall by modifying the TILES variable in the crconfig.conf script. For example, if you set it to use tile-0-0 through tile-0-3, it will only display an image on the left half of the wall. Running on tiles-0-4 through tile-0-7 will make it run on the right half of the wall. This will cause the aspect ratio of your program to change. Chromium effectively runs your OpenGL program in full-screen mode and therefore your OpenGL viewport will always be stretched to fill whatever screen OpenGL provides. Nonetheless, it does allow you to run your program and get a basic idea for how it might work on the entire wall.
+
+
+### My chromium program runs slowly, with a low frames-per-second (fps), runs choppy on the display wall. How can I make it faster?
+
+* Make sure that you have a mothership.py (see the slideshow program) in the same directory as the "chromium" script and the "crconfig.conf" file. This mothership file ensures that the InfiniBand network is used.
+
+* If you are running the program on IVS using a laptop and wireless connection, it will run slowly. Try logging into ccsr.ee.mtu.edu (the Linux computer in the lab), ssh'ing into ivs.research.mtu.edu and running your program from there.
+
+* Modify the cr.MTU(???) variable in crconfig.conf. Setting this anywhere from a megabyte (1024*1024) to many megabytes (1024*1024*20) can change how your program runs.
+
+* Using the distributed rendering system (see STL-flow for an example) is the best way to ensure good performance. This will require that you rewrite your program.
+

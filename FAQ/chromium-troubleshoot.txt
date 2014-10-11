@@ -1,0 +1,46 @@
+### STEP 1. Can your computer successfully run an OpenGL program on a remote computer but display the result on the computer that you are physically using?
+
+You can test this by doing:  "ssh -Y colossus.it.mtu.edu" and then running "glxgears". If you don't see gears on your screen, then there is likely a problem with 3D rendering, X forwarding, or your SSH configuration.
+
+
+### STEP 2. Can your computer successfully run an OpenGL program on IVS but display the result on the computer that you are physically using?
+
+You can test this by doing:  "ssh -Y ivs.research.mtu.edu" and then running "glxgears". If you don't see gears on your screen, there may be a problem with 3D rendering, X forwarding, or your SSH configuration. This test should work if you ssh to ivs.research.mtu.edu from ccsr.ee.mtu.edu. If not, something is seriously wrong which you may not be able to fix yourself.
+
+
+### STEP 3. Can you SSH into all tile computers without a password?
+
+When you are logged in to ivs.research.mtu.edu, you should be able to ssh into the following computers without needing to enter a password. To test this with the first computer, run "ssh tile-0-0", verify that you logged in without a password, and type "exit". Repeat for each of the tile computers. The tile computers are named tile-0-0, tile-0-1, tile-0-2, tile-0-3, tile-0-4, tile-0-5, tile-0-6, tile-0-7. 
+
+### STEP 4. Are all of the screens working?
+
+All of the screens should show a solid colored background. If a row of three screens right next to each other are not working, it is evidence that there is a problem with a specific tile computer. You may not be able to fix this problem. However, it may be possible to only run chromium on a subset of the screens until the problem is fixed (see chromium-tips.txt for more info).
+
+If one screen is off continuously (and other screens from the same tile are on), or if screens turn on and off periodically, chromium should still work.
+
+
+### STEP 5. Can you run glxgears using chromium?
+
+Login to ccsr.ee.mtu.edu (the Linux machine in the lab) and then try to run:  "ssh -Y ivs.research.mtu.edu", cd into the slideshow directory, and then run  "./chromium glxgears". If you don't see gears on the display wall, there is a problem with chromium.
+
+If you are running a chromium program from your laptop, then you should also perform this test using your laptop instead of ccsr.ee.mtu.edu. Note: Using a laptop to run programs on the display wall may slow your program down compared to running it on ccsr.ee.mtu.edu.
+
+### STEP 6. Can you run the slideshow program using chromium?
+
+The slideshow program is a good, well-tested program to use when testing your code. Go into the slideshow program and try running "./chromium slideshow image1.jpg image2.jpg" where the two image files are any images that you have. You should see the image on the display wall. You can advance between images using the spacebar.
+
+
+### STEP 7. Have you made any changes to the SVN repository?
+
+"svn status" and "svn diff" will tell you which files you have changed and give you a listing of the exact changes. You should either commit your changes. If you want to erase your changes and revert to the versions in the repository, use "svn revert filename" on each file that you want to revert.
+
+
+### STEP 8. Do you have the latest copy of the SVN repository?
+
+"svn update" will update your copy of the repository to include any fixes.
+
+
+### STEP 9. If you are working on your own program, do you have the latest copies of the "chromium" script, crconfig.conf and mothership.py copied into your directory?
+
+If you are using an old copy of these files, there is a chance that you will encounter problems.
+
